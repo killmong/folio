@@ -22,7 +22,7 @@ import {
   SheetHeader,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { motion } from "motion/react";
+import { motion,Variants } from "motion/react";
 import { LogOut } from "lucide-react";
 const navItems = [
   { name: "Dashboard", href: "/", icon: Home },
@@ -33,7 +33,7 @@ const navItems = [
 ];
 
 // The parent container that controls the cascading delay for the sidebar
-const sidebarContainerVariants = {
+const sidebarContainerVariants : Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -42,7 +42,7 @@ const sidebarContainerVariants = {
 };
 
 // The individual animation for the logo, links, and toggle
-const sidebarItemVariants = {
+const sidebarItemVariants : Variants = {
   hidden: { opacity: 0, x: -20 },
   show: {
     opacity: 1,

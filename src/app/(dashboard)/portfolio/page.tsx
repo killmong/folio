@@ -9,15 +9,15 @@ import {
 } from "@/components/ui/card";
 import { BarList, CategoryBar } from "@tremor/react";
 import { topPerformingAssets } from "@/data/data";
-import { motion } from "motion/react";
+import { motion , Variants} from "motion/react";
 import { AssetAllocation } from "@/components/dashboard/AssetAllocation";
 
-const containerVariants = {
+const containerVariants  : Variants= {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { staggerChildren: 0.1 } },
 };
 
-const itemVariants = {
+const itemVariants : Variants = {
   hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,

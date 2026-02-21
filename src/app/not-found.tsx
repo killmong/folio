@@ -1,20 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "motion/react";
+import { motion,Variants } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { Home, SearchX } from "lucide-react";
 
-// Staggered entrance for the main content
-const containerVariants = {
+
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.15 },
+    transition: {
+      staggerChildren: 0.15,
+    },
   },
 };
 
-const itemVariants = {
+const itemVariants : Variants = {
   hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,
@@ -24,7 +26,7 @@ const itemVariants = {
 };
 
 // A continuous floating animation for the 404 icon
-const floatVariants = {
+const floatVariants : Variants = {
   animate: {
     y: [0, -10, 0],
     transition: {

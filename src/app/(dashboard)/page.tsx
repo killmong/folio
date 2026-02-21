@@ -5,33 +5,35 @@ import { AreaChart } from "@tremor/react";
 import { portfolioGrowth } from "@/data/data";
 import { Wallet, TrendingUp, PiggyBank, Briefcase } from "lucide-react";
 import { RecentTransactions } from "@/components/dashboard/RecentTransactions";
-import { motion } from "motion/react";
+import { motion, Variants } from "motion/react";
 import { AssetAllocation } from "@/components/dashboard/AssetAllocation";
 const dataFormatter = (number: number) => {
   return "₹" + Intl.NumberFormat("en-IN").format(number).toString();
 };
 
 // The parent container that controls the cascading delay
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1, // 0.1 second delay between each child animating in
+      staggerChildren: 0.1,
     },
   },
 };
-
 // The individual animation for every card and section
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 300, damping: 24 },
+    transition: {
+      type: "spring",
+      stiffness: 300,
+      damping: 24,
+    },
   },
 };
-
 export default function Dashboard() {
   return (
     <motion.div
